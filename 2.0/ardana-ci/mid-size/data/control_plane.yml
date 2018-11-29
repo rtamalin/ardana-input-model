@@ -56,9 +56,8 @@
             - keystone-client
             - glance-api:
                 ha_mode: false
-                glance_stores: 'file'
-                glance_default_store: 'file'
-            - glance-registry
+                glance_backends: 'file:file'
+                glance_default_backend: 'file:file'
             - horizon
             - heat-api
             - heat-api-cfn

@@ -106,9 +106,8 @@
             - cinder-backup
             - glance-api:
                 ha_mode: false
-                glance_stores: 'file'
-                glance_default_store: 'file'
-            - glance-registry
+                glance_backends: 'file:file'
+                glance_default_backend: 'file:file'
             - nova-api
             - nova-placement-api
             - nova-scheduler

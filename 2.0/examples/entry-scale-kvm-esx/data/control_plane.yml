@@ -53,7 +53,6 @@
             - keystone-client
             - rabbitmq
             - glance-api
-            - glance-registry
             - glance-client
             - cinder-api
             - cinder-scheduler

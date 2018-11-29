@@ -45,9 +45,8 @@
             - rabbitmq
             - glance-api
             - glance-api:
-                glance_stores: 'file'
-                glance_default_store: 'file'
-            - glance-registry
+                glance_backends: 'file:file'
+                glance_default_backend: 'file:file'
             - cinder-api
             - cinder-scheduler
             - cinder-volume

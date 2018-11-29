@@ -36,9 +36,20 @@ service-components:
         ansible-vars:
         -   name: ha_mode
             value: true
+        # "stores" will be replaced by backends in a future release
         -   name: glance_stores
             value: 'swift'
         -   name: glance_default_store
+            value: 'swift'
+        # whether to enable glance multistore backends or not
+        -   name: glance_multistore
+            value: false
+        # format of a backends entry is comma separated list of key:value
+        # pairs where key is an identifier for a backend, and value is the
+        # type of the backend
+        -   name: glance_backends
+            value: 'swift:swift'
+        -   name: glance_default_backend
             value: 'swift'
         # Set default rate limit for GLA-API to address CVE-2016-8611
         -   name: glance_rate_limit
@@ -77,8 +88,6 @@ service-components:
             properties:
                 max-length: 12
                 min-length: 8
-
-    -   service-name: GLA-REG
 
     -   service-name: SWF-PRX
         optional: true
